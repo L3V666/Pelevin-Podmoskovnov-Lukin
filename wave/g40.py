@@ -4,6 +4,7 @@ import pandas as pd
 from scipy.optimize import curve_fit
 
 data = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/wave/w40.csv')[1:])
+data[:, 1] /= 0.026
 
 def linear_func(x, a, b):
     return a * x + b
@@ -28,15 +29,15 @@ x, y, a, b, da, db = lsm(data[200:300, 0], data[200:300, 1])
 plt.plot(x, y, linewidth=2.5, c='dodgerblue')
 
 x0 = np.array([2.12, 2.12])
-y0 = np.array([0, 1.5])
+y0 = np.array([0, 45])
 
 plt.plot(x0, y0, linestyle='--', c='green')
 
 plt.xlim(0, 15)
-plt.ylim(0, 1.1)
+plt.ylim(0, 45)
 
-plt.xlabel('h, мм')
-plt.ylabel('U, В')
+plt.xlabel('t, с')
+plt.ylabel('h, мм')
 
 
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
