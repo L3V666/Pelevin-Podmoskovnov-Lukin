@@ -121,4 +121,4 @@ def denoise_csv(input_csv, output_csv, method='savgol', columns=None, plot=False
     return df_clean
 
 # Пример использования:
-denoise_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/30-50.csv', '30-50clean.csv', method='butter', kernel_size=7, plot=True)
+denoise_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/30-50pridurok.csv', '30-50pridurok_clean.csv', method='butter', kernel_size=7, plot=True)

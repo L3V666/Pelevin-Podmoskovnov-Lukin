@@ -2,8 +2,7 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
 
-data = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/rest.csv'))
-data_clean = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/data_clean_med.csv')) 
+data_clean = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/pridurok_clean.csv')) 
 
 data_clean[:, 1] *= 80.65 
 
@@ -33,9 +32,9 @@ y_fit = p(x)
 #plt.plot(x, y_fit)
 
 #plt.plot(data_clean[:, 0], data_clean[:, 1] - y_fit)
-m = data_clean[54446:90634, 1] - y_fit[54446:90634]
-n = data_clean[54446:90634, 0]
-np.savetxt('30-50.csv', np.column_stack((n, m)), delimiter=',', fmt='%.4f', header='с,В', comments='', encoding="utf8")
+m = data_clean[54490:90782, 1] - y_fit[54490:90782]
+n = data_clean[54490:90782, 0]
+np.savetxt('30-50pridurok.csv', np.column_stack((n, m)), delimiter=',', fmt='%.4f', header='с,В', comments='', encoding="utf8")
 
 plt.xlim(0, 60)
 

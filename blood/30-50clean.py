@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
 
-data = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/30-50clean.csv')[1:])
+data = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/30-50pridurok_clean.csv')[1:])
 
 data[:, 1] *= 80.65
 
@@ -15,6 +15,5 @@ plt.grid(True, which='major', linestyle='-', linewidth=0.5)
 plt.grid(True, which='minor', linestyle='-', linewidth=0.3)
 
 plt.minorticks_on()
-
 
 plt.show()
