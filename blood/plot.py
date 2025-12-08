@@ -5,6 +5,8 @@ import numpy as np
 data = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/rest.csv'))
 data_clean = np.array(pd.read_csv('/home/l3v/repo/Pelevin-Podmoskovnov-Lukin/blood/data_clean_med.csv')) 
 
+data_clean[:, 1] *= 80.65 
+
 plt.plot(data_clean[:, 0], data_clean[:, 1], label='data_clean')
 
 local_min = []
@@ -35,6 +37,14 @@ m = data_clean[54446:90634, 1] - y_fit[54446:90634]
 n = data_clean[54446:90634, 0]
 np.savetxt('30-50.csv', np.column_stack((n, m)), delimiter=',', fmt='%.4f', header='с,В', comments='', encoding="utf8")
 
-plt.legend()
+plt.xlim(0, 60)
+
+plt.grid(True, which='major', linestyle='-', linewidth=0.5)
+plt.grid(True, which='minor', linestyle='-', linewidth=0.3)
+
+plt.minorticks_on()
+
+plt.ylabel('$P$, мм рт. ст.')
+plt.xlabel('$t$, с')
 
 plt.show()
