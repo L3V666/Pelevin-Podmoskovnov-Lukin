@@ -29,7 +29,7 @@ y_fit = p(x)
 
 #print(p)
 
-#plt.plot(x, y_fit)
+plt.plot(x, y_fit)
 
 #plt.plot(data_clean[:, 0], data_clean[:, 1] - y_fit)
 m = data_clean[54490:90782, 1] - y_fit[54490:90782]
